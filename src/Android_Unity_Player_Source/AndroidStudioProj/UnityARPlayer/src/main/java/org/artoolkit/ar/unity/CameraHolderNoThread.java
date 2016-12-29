@@ -34,14 +34,8 @@ public class CameraHolderNoThread {
     // --------------------------------------------------
     // Message ID
     // --------------------------------------------------
-    private final static int OpenCamera = 0;
-    private final static int CloseCamera = 1;
-    private final static int StartCapture = 2;
-    private final static int StopCapture = 3;
-
     private final static String FaceBack = "Back";
     private final static String FaceFront = "Front";
-
     // --------------------------------------------------
     // camera variable
     // --------------------------------------------------
