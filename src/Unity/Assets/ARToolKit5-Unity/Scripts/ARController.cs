@@ -97,6 +97,7 @@ public class ARController : MonoBehaviour
 
     private string _version = "";
     private bool _running = false;
+    private bool _pause = false;
     private bool _runOnUnpause = false;
     private bool _sceneConfiguredForVideo = false;
     private bool _sceneConfiguredForVideoWaitingMessageLogged = false;
@@ -421,7 +422,7 @@ public class ARController : MonoBehaviour
     {
         //Log(LogTag + "ARController.Update()");
         
-        if (Application.isPlaying) {
+        if (Application.isPlaying && !_pause) {
 
             // Player update.
             if (Input.GetKeyDown(KeyCode.Menu) || Input.GetKeyDown(KeyCode.Return)) showGUIDebug = !showGUIDebug;
@@ -1842,6 +1843,13 @@ public class ARController : MonoBehaviour
         }
 
         GUI.EndScrollView();
+    }
+
+    public void Pause(bool v)
+    {
+        _pause = v;
+
+        //TODO: @namkazt we should add stop camera function here. to completely pause ARtoolkit process.
     }
 
 }
